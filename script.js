@@ -15,31 +15,31 @@ const songs = [
   {
     path: "assets/music/1.mp3",
     displayName: "Blinding Lights",
-    cover: "assets/img/1.jpg",
+    cover: "assets/img/1.webp",
     artist: "The Weeknd",
   },
   {
     path: "assets/music/2.mp3",
     displayName: "Timeless",
-    cover: "assets/img/2.jpg",
+    cover: "assets/img/2.webp",
     artist: "The Weeknd",
   },
   {
     path: "assets/music/3.mp3",
     displayName: "Blue Horizon",
-    cover: "assets/img/3.jpg",
+    cover: "assets/img/3.webp",
     artist: "NXGHT",
   },
   {
     path: "assets/music/4.mp3",
     displayName: "Nunca Muda",
-    cover: "assets/img/4.jpg",
+    cover: "assets/img/4.webp",
     artist: "Scythermane",
   },
   {
     path: "assets/music/5.mp3",
     displayName: "Avangard",
-    cover: "assets/img/5.jpg",
+    cover: "assets/img/5.webp",
     artist: "LONOWN",
   },
 ];
@@ -66,10 +66,8 @@ function playMusic() {
 
 function pauseMusic() {
   isPlaying = false;
-  //Change play button icon
   playBtn.classList.replace("fa-pause", "fa-play");
-  //Set button hover title
-  playBtn.setAttribute("title", "Play");
+  //Set button hover titwebp  playBtn.setAttribute("title", "Play");
   music.pause();
 }
 
