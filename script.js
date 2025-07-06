@@ -8,7 +8,6 @@ const image = document.getElementById("cover"),
   prevBtn = document.getElementById("prev"),
   nexBtn = document.getElementById("next"),
   playBtn = document.getElementById("play");
-//   background = document.getElementById("bg-img");
 
 const music = new Audio();
 
@@ -16,31 +15,31 @@ const songs = [
   {
     path: "assets/music/1.mp3",
     displayName: "Blinding Lights",
-    cover: "assets/img/1.webp",
+    cover: "assets/img/1.jpg",
     artist: "The Weeknd",
   },
   {
     path: "assets/music/2.mp3",
     displayName: "Timeless",
-    cover: "assets/img/2.webp",
+    cover: "assets/img/2.jpg",
     artist: "The Weeknd",
   },
   {
     path: "assets/music/3.mp3",
     displayName: "Blue Horizon",
-    cover: "assets/img/3.webp",
+    cover: "assets/img/3.jpg",
     artist: "NXGHT",
   },
   {
     path: "assets/music/4.mp3",
     displayName: "Nunca Muda",
-    cover: "assets/img/4.webp",
+    cover: "assets/img/4.jpg",
     artist: "Scythermane",
   },
   {
     path: "assets/music/5.mp3",
     displayName: "Avangard",
-    cover: "assets/img/5.webp",
+    cover: "assets/img/5.jpg",
     artist: "LONOWN",
   },
 ];
@@ -79,7 +78,6 @@ function loadMusic(song) {
   title.textContent = song.displayName;
   artist.textContent = song.artist;
   image.src = song.cover;
-  //   background.src = song.cover;
 }
 
 function changeMusic(direction) {
