@@ -72,13 +72,37 @@ function pauseMusic() {
 }
 
 function loadMusic(song) {
-  music.src = song.path;
+  // Reset duration and progress UI early
+  durationEl.textContent = "--:--";
+  currentTimeEl.textContent = "0:00";
+  progress.style.width = "0%";
+
+  // Set text content immediately
   title.textContent = song.displayName;
   artist.textContent = song.artist;
-  image.src = song.cover;
+
+  // Set audio source
+  music.src = song.path;
+
+  // Wait for duration to be ready (prevents NaN)
+  music.addEventListener(
+    "loadedmetadata",
+    () => {
+      updateProgressBar(); // sets correct duration
+    },
+    { once: true }
+  );
+
+  // Use preloading technique for cover image
+  const img = new Image();
+  img.src = song.cover;
+  img.onload = () => {
+    image.src = img.src;
+  };
 }
 
 function changeMusic(direction) {
+  music.pause();
   musicIndex = (musicIndex + direction + songs.length) % songs.length;
   loadMusic(songs[musicIndex]);
   playMusic();
